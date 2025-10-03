@@ -1,0 +1,7 @@
+.link {
+  color: var(--link-color);
+}
+
+.link:hover {
+  color: blueviolet;
+}
