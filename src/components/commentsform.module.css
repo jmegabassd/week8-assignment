@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  background-color: #faebd7;
+  gap: 10px;
+}
+
+.fieldset {
+  border: 2px solid black;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.button {
+  width: fit-content;
+  border: 2px solid black;
+  padding: 4px;
+  display: block;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.label {
+  display: block;
+}
+
+.input {
+  display: block;
+  background-color: aliceblue;
+}
+
+.textarea {
+  background-color: aliceblue;
+}
