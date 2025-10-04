@@ -14,7 +14,16 @@ export default async function PostsPage() {
     <div className={postsContainer.mainpostscontainer}>
       {posts.map((post) => {
         const postDate = new Date(post.time);
-        const postDateString = postDate.toLocaleString();
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+        };
+
+        const postDateString = postDate.toLocaleString("en-US", options);
         return (
           <div className={postsContainer.postscontainer} key={post.id}>
             <Image

@@ -12,11 +12,21 @@ export default async function Comments({ postsId }) {
     <>
       {comments.map((comment) => {
         const postDate = new Date(comment.time);
-        const postDateString = postDate.toLocaleString();
+        const options = {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+        };
+        const postDateString = postDate.toLocaleString("en-US", options);
         return (
           <div className={commentsContainer.commentscontainer} key={comment.id}>
-            <p>{comment.name}</p>
-            <p>{postDateString}</p>
+            <p>
+              {comment.name} on {postDateString} says:
+            </p>
+
             <p>{comment.comments}</p>
           </div>
         );

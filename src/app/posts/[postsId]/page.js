@@ -12,7 +12,15 @@ export default async function PostsIdPage({ params }) {
   const posts = query.rows[0];
   console.log(posts);
   const postDate = new Date(posts.time);
-  const postDateString = postDate.toLocaleString();
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  };
+  const postDateString = postDate.toLocaleString("en-US", options);
   return (
     <div className={postsIdContainer.postsidcontainer}>
       <div>
@@ -30,10 +38,8 @@ export default async function PostsIdPage({ params }) {
           {posts.author} on {postDateString}
         </h2>
         <p>{posts.description}</p>
-        <p className="!mt-[10px]">Leave a comment</p>
-        <div className={`hidden ${postsIdContainer.hiddenform}`}>
-          <CommentsForm />
-        </div>
+
+        <CommentsForm postsId={postsId} />
       </div>
       <div className="!mt-[10px]">
         <h1 className="!text-2xl">Previous comments</h1>
