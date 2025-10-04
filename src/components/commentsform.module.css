@@ -1,10 +1,12 @@
 .form {
   display: flex;
   flex-direction: column;
+
   padding: 8px;
   background-color: #faebd7;
   gap: 10px;
   border-radius: 5px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .fieldset {
@@ -12,6 +14,7 @@
   padding: 8px;
   margin: 5px;
   border-radius: 5px;
+  width: 560px;
 }
 
 .button {
@@ -21,11 +24,14 @@
   border: 2px solid black;
   width: 60px;
   height: 35px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .button:hover {
   cursor: pointer;
   color: white;
+  background-color: rgba(0, 0, 0, 0.656);
+  border: 2px solid darkorange;
 }
 
 .label {
@@ -35,10 +41,12 @@
 .input {
   display: block;
   background-color: aliceblue;
+  padding: 4px;
 }
 
 .textarea {
   background-color: aliceblue;
+  padding: 4px;
 }
 
 .legend {

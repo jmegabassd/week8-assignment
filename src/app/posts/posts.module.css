@@ -12,9 +12,10 @@
 }
 
 .postscontainer {
-  background-color: burlywood;
-  padding: 8px;
+  background-color: antiquewhite;
+  padding: 10px;
   border-radius: 8px;
   width: fit-content;
   height: fit-content;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

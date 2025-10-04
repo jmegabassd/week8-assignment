@@ -29,7 +29,7 @@ export default async function UserComments({ postsId }) {
       <legend className={formComments.legend}>Leave a comment</legend>
       <form className={formComments.form} action={handleSavePost}>
         <label className={formComments.label} htmlFor="name">
-          Name
+          Name:
         </label>
         <input
           className={formComments.input}
@@ -37,16 +37,20 @@ export default async function UserComments({ postsId }) {
           name="name"
           type="text"
           maxLength={30}
+          required
+          placeholder="Your name goes here."
         />
 
         <label className={formComments.label} htmlFor="comments">
-          Content
+          Comments:
         </label>
         <textarea
           className={formComments.textarea}
           id="comments"
           name="comments"
           type="text"
+          required
+          placeholder="Please leave your comments here."
         />
 
         <button className={formComments.button} type="submit">
