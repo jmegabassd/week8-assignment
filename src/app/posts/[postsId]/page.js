@@ -41,7 +41,7 @@ export default async function PostsIdPage({ params }) {
 
         <CommentsForm postsId={postsId} />
       </div>
-      <div className="!mt-[10px]">
+      <div className="!overflow-auto !mt-[10px]">
         <h1 className="!text-2xl">Previous comments</h1>
         <Comments postsId={postsId} />
       </div>

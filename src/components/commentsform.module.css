@@ -4,6 +4,7 @@
   padding: 8px;
   background-color: #faebd7;
   gap: 10px;
+  border-radius: 5px;
 }
 
 .fieldset {
@@ -14,12 +15,17 @@
 }
 
 .button {
-  width: fit-content;
+  background-color: darkorange;
+  padding: 3px;
+  border-radius: 4px;
   border: 2px solid black;
-  padding: 4px;
-  display: block;
-  background-color: aliceblue;
-  border-radius: 5px;
+  width: 60px;
+  height: 35px;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .label {
@@ -33,4 +39,8 @@
 
 .textarea {
   background-color: aliceblue;
+}
+
+.legend {
+  font-size: 20px;
 }

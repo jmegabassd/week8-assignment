@@ -1,4 +1,9 @@
 .commentscontainer {
   background-color: antiquewhite;
   padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 8px;
 }

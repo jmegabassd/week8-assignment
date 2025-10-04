@@ -1,5 +1,6 @@
 import commentsContainer from "./comments.module.css";
 import { db } from "@/utils/dbConnection";
+import DeleteButton from "./DeleteButton";
 
 export default async function Comments({ postsId }) {
   const query = await db.query(
@@ -9,7 +10,7 @@ export default async function Comments({ postsId }) {
   const comments = query.rows;
 
   return (
-    <>
+    <div className={commentsContainer.master}>
       {comments.map((comment) => {
         const postDate = new Date(comment.time);
         const options = {
@@ -26,11 +27,11 @@ export default async function Comments({ postsId }) {
             <p>
               {comment.name} on {postDateString} says:
             </p>
-
             <p>{comment.comments}</p>
+            <DeleteButton commentId={comment.id} />
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
