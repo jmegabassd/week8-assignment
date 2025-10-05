@@ -31,11 +31,17 @@ Required
 ## What useful external sources helped you complete the assignment (e.g Youtube tutorials)?
 
 > (https://www.geeksforgeeks.org/php/how-to-get-youtube-video-id-with-php-regex/)
+>
 > (https://nextjs.org/docs/app/guides/videos)
+>
 > (https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api)
+>
 > (https://react.dev/reference/react/useCallback)
+>
 > (https://nextjs.org/docs)
 
 ## What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
 > I managed to mess up my local file saves, then got in a muddle with Git, was silly enough to not use branching, I fixed the issue in the end by deleting my local files and doing a git clone, I lost a couple of housr of work.
+>
+> Some of the Styling wouldn't work if the return was wrapped in <></>, I found changing it to be wrapped in a div fixed it.
