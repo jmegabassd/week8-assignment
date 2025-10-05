@@ -3,16 +3,29 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   width: 100%;
-  margin-top: 20px;
+  height: 100%;
+  margin-top: 10px;
 }
 
 .iframe {
   border-radius: 5px;
   display: block;
   margin: 0 auto;
+}
+
+.commentsdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.commentsformdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

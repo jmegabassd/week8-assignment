@@ -17,7 +17,7 @@
   background-color: #faebd7;
   gap: 10px;
   border-radius: 5px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: 2px 2px 9px 5px rgba(0, 0, 0, 0.5);
 }
 
 .fieldset {
@@ -36,7 +36,7 @@
   border: 2px solid black;
   width: 60px;
   height: 35px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .button:hover {
@@ -44,6 +44,7 @@
   color: white;
   background-color: rgba(0, 0, 0, 0.656);
   border: 2px solid darkorange;
+  box-shadow: -2px 2px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .label {

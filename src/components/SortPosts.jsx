@@ -1,39 +1,31 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/router";
+
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 export default function SortPosts() {
-  const [sort, setSort] = useState("name");
-  const [direction, setDirection] = useState("asc");
   const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentSort = searchParams.get("sort") || "";
 
-  const handleSortChange = (e) => {
-    const selectedSort = e.target.value;
-    setSort(selectedSort);
+  const handleSortChange = (event) => {
+    const newSort = event.target.value;
+    const params = new URLSearchParams(searchParams.toString());
+    if (newSort) {
+      params.set("sort", newSort);
+    } else {
+      params.delete("sort");
+    }
 
-    router.push(`?sort=${selectedSort}&direction=${direction}`);
-  };
-
-  const handleDirectionChange = (e) => {
-    const selectedDirection = e.target.value;
-    setDirection(selectedDirection);
-
-    router.push(`?sort=${sort}&direction=${selectedDirection}`);
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   return (
     <div>
-      <label htmlFor="sort">Sort By:</label>
-      <select id="sort" value={sort} onChange={handleSortChange}>
-        <option value="time">Time</option>
-        <option value="track_name">Track Name</option>
-        <option value="genre">Genre</option>
-      </select>
-
-      <label htmlFor="direction">Direction:</label>
-      <select id="direction" value={direction} onChange={handleDirectionChange}>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
+      <label htmlFor="sort">Sort by:</label>
+      <select id="sort" value={currentSort} onChange={handleSortChange}>
+        <option value="desc">Newest Post</option>
+        <option value="asc">Oldest Post</option>
       </select>
     </div>
   );

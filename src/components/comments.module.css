@@ -1,10 +1,8 @@
 .commentscontainer {
   background-color: antiquewhite;
-  padding: 8px;
+  padding: 6px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
   margin: 8px;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  text-align: left;
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.5);
 }

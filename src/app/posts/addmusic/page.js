@@ -16,12 +16,20 @@ export default async function AddPost() {
 
     const currentTime = new Date().toISOString();
 
+    const getYouTubeId = (url) => {
+      const regExp =
+        /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+      const match = url.match(regExp);
+      return match && match[1] ? match[1] : null;
+    };
+
+    const videoUrl = video_id;
+    const videoid = getYouTubeId(videoUrl);
+
     await db.query(
       `INSERT INTO posts (time, username, artist, album, track_name, genre, video_id ) VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-      [currentTime, username, artist, album, track_name, genre, video_id]
+      [currentTime, username, artist, album, track_name, genre, videoid]
     );
-
-    console.log("Post saved!");
 
     revalidatePath("/posts");
     redirect("/posts");
@@ -42,7 +50,7 @@ export default async function AddPost() {
             type="text"
             required
             placeholder="Your name."
-            maxLength={30}
+            maxLength={40}
           />
 
           <label className={addPost.label} htmlFor="artist">
@@ -55,7 +63,7 @@ export default async function AddPost() {
             type="text"
             required
             placeholder="The artist's name."
-            maxLength={100}
+            maxLength={80}
           />
 
           <label className={addPost.label} htmlFor="album">
@@ -68,7 +76,7 @@ export default async function AddPost() {
             type="text"
             required
             placeholder="The name of the album."
-            maxLength={100}
+            maxLength={80}
           />
 
           <label className={addPost.label} htmlFor="track_name">
@@ -81,7 +89,7 @@ export default async function AddPost() {
             type="text"
             required
             placeholder="The track name."
-            maxLength={100}
+            maxLength={80}
           />
 
           <label className={addPost.label} htmlFor="genre">
@@ -94,7 +102,7 @@ export default async function AddPost() {
             type="text"
             required
             placeholder="Which genre does this music come from."
-            maxLength={30}
+            maxLength={20}
           />
 
           <label className={addPost.label} htmlFor="video_id">
@@ -106,8 +114,7 @@ export default async function AddPost() {
             name="video_id"
             type="text"
             required
-            placeholder="YouTube Video ID (11 digits)"
-            maxLength={11}
+            placeholder="YouTube Video URL"
           />
 
           <button className={addPost.button} type="submit">

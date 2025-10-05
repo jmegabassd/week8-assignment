@@ -40,10 +40,12 @@ export default async function PostsIdPage({ params }) {
         <h2 className="!text-xl">
           Posted by {posts.username} on {postDateString}
         </h2>
-        <CommentsForm postsId={postsId} />
+        <div className={postsIdContainer.commentsformdiv}>
+          <CommentsForm postsId={postsId} />
+        </div>
       </div>
-      <div className="!overflow-auto !mt-[10px]">
-        <h1 className="!text-2xl">Previous comments</h1>
+      <h1 className="!text-2xl">Previous comments</h1>
+      <div className={postsIdContainer.commentsdiv}>
         <Comments postsId={postsId} />
       </div>
     </div>
