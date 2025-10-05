@@ -1,6 +1,18 @@
+.maincontainer {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form {
   display: flex;
   flex-direction: column;
+  justify-items: center;
   padding: 8px;
   background-color: #faebd7;
   gap: 10px;
@@ -14,6 +26,7 @@
   margin: 5px;
   border-radius: 5px;
   width: 560px;
+  height: fit-content;
 }
 
 .button {
@@ -46,4 +59,8 @@
 .textarea {
   background-color: aliceblue;
   padding: 4px;
+}
+
+.legend {
+  font-size: 20px;
 }

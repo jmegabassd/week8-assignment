@@ -6,7 +6,7 @@ import CommentsForm from "@/components/CommentsForm";
 export default async function PostsIdPage({ params }) {
   const postsId = (await params).postsId;
   const query = await db.query(
-    `SELECT id, time, author, title, description, video_id From posts WHERE id = ${postsId}`
+    `SELECT id, time, username, artist, album, track_name, genre, video_id From posts WHERE id = ${postsId}`
   );
 
   const posts = query.rows[0];
@@ -24,8 +24,11 @@ export default async function PostsIdPage({ params }) {
   return (
     <div className={postsIdContainer.postsidcontainer}>
       <div>
-        <h1>{posts.title}</h1>
+        <h1 className="!text-xl">
+          {posts.track_name} by {posts.artist} from {posts.album}
+        </h1>
         <iframe
+          className={postsIdContainer.iframe}
           width="560"
           height="315"
           src={`https://www.youtube.com/embed/${posts.video_id}`}
@@ -34,11 +37,9 @@ export default async function PostsIdPage({ params }) {
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe>
-        <h2>
-          {posts.author} on {postDateString}
+        <h2 className="!text-xl">
+          Posted by {posts.username} on {postDateString}
         </h2>
-        <p>{posts.description}</p>
-
         <CommentsForm postsId={postsId} />
       </div>
       <div className="!overflow-auto !mt-[10px]">

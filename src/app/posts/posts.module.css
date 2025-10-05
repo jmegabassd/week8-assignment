@@ -1,13 +1,15 @@
 .mainpostscontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
   margin: 8px;
-  gap: 10px;
   overflow: auto;
 }
 
@@ -15,7 +17,18 @@
   background-color: antiquewhite;
   padding: 10px;
   border-radius: 8px;
+  width: 370px;
+  height: 370px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.sortposts {
   width: fit-content;
   height: fit-content;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.image {
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
 }

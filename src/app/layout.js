@@ -4,8 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const roboto = Roboto({
-  weight: "500",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {

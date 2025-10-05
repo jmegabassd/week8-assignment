@@ -26,7 +26,7 @@ export default async function UserComments({ postsId }) {
 
   return (
     <fieldset className={formComments.fieldset}>
-      <legend className={formComments.legend}>Leave a comment</legend>
+      <legend className="text-xl">Leave a comment</legend>
       <form className={formComments.form} action={handleSavePost}>
         <label className={formComments.label} htmlFor="name">
           Name:

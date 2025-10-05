@@ -1,8 +1,9 @@
 .link {
   color: var(--link-color);
+  font-weight: 500;
   font-size: 18px;
 }
 
 .link:hover {
-  color: blueviolet;
+  color: darkred;
 }
