@@ -27,16 +27,16 @@ export default async function PostsIdPage({ params }) {
         <h1 className="!text-xl">
           {posts.track_name} by {posts.artist} from {posts.album}
         </h1>
-        <iframe
-          className={postsIdContainer.iframe}
-          width="560"
-          height="315"
-          src={`https://www.youtube.com/embed/${posts.video_id}`}
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
+        <div className={postsIdContainer.iframecontainer}>
+          <iframe
+            className={postsIdContainer.iframe}
+            src={`https://www.youtube.com/embed/${posts.video_id}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
         <h2 className="!text-xl">
           Posted by {posts.username} on {postDateString}
         </h2>

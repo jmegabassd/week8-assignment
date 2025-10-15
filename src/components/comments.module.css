@@ -1,3 +1,9 @@
+.master {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 .commentscontainer {
   background-color: antiquewhite;
   padding: 6px;

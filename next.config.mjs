@@ -7,6 +7,7 @@ const nextConfig = {
         hostname: "img.youtube.com",
       },
     ],
+    qualities: [85],
   },
 };
 

@@ -13,7 +13,7 @@
   padding: 8px;
   margin: 5px;
   border-radius: 5px;
-  width: 560px;
+  width: 100%;
 }
 
 .button {
@@ -48,4 +48,17 @@
 .textarea {
   background-color: aliceblue;
   padding: 4px;
+}
+@media only screen and (max-device-width: 480px) {
+  .fieldset {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .button {
+    width: 50px;
+    height: 30px;
+    font-size: 14px;
+  }
 }

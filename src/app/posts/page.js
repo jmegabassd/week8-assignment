@@ -22,7 +22,7 @@ export default async function PostsPage({ searchParams }) {
   const posts = query.rows;
 
   return (
-    <div>
+    <div className={postsContainer.maincontainer}>
       <div className={postsContainer.sort}>
         <SortPosts />
       </div>
@@ -42,40 +42,37 @@ export default async function PostsPage({ searchParams }) {
           const postDateString = postDate.toLocaleString("en-US", options);
           return (
             <div className={postsContainer.postscontainer} key={post.id}>
-              <Image
-                src={`https://img.youtube.com/vi/${post.video_id}/0.jpg`}
-                width={240}
-                height={180}
-                alt="Album images from YouTube"
-                className={postsContainer.image}
-                priority={true} //Remove lazy loading warning in console
-              />
-
-              <p className="flex flex-wrap font-normal">
-                Posted by:{post.username} on
-              </p>
-
-              <p className="flex flex-wrap font-normal">{postDateString}</p>
-
-              <p className="flex flex-wrap font-normal">
-                Artist:
-                {post.artist}
-              </p>
-
-              <p className="flex flex-wrap font-normal">
-                Album:
-                {post.album}
-              </p>
-
-              <p className="flex flex-wrap font-normal">
-                Track:
-                {post.track_name}
-              </p>
-              <p className="flex flex-wrap font-normal">
-                Genre:
-                {post.genre}
-              </p>
-
+              <div className={postsContainer.imagecontainer}>
+                <Image
+                  src={`https://img.youtube.com/vi/${post.video_id}/hqdefault.jpg`}
+                  sizes="100%"
+                  fill={true}
+                  alt="Album images from YouTube"
+                  className={postsContainer.image}
+                  quality={85}
+                  priority={true}
+                />
+              </div>
+              <div className={postsContainer.poststext}>
+                <p>Posted by:{post.username} on</p>
+                <p>{postDateString}</p>
+                <p>
+                  Artist:
+                  {post.artist}
+                </p>
+                <p>
+                  Album:
+                  {post.album}
+                </p>
+                <p>
+                  Track:
+                  {post.track_name}
+                </p>
+                <p>
+                  Genre:
+                  {post.genre}
+                </p>
+              </div>
               <Links className={postsContainer.link} href={`/posts/${post.id}`}>
                 Read More
               </Links>

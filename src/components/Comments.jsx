@@ -1,6 +1,7 @@
 import commentsContainer from "./comments.module.css";
 import { db } from "@/utils/dbConnection";
 import DeleteButton from "./DeleteButton";
+// import EditButton from "./EditButton";
 
 export default async function Comments({ postsId }) {
   const query = await db.query(
@@ -28,6 +29,7 @@ export default async function Comments({ postsId }) {
               {comment.name} on {postDateString} says:
             </p>
             <p>{comment.comments}</p>
+            {/* <EditButton commentId={comment.id} /> */}
             <DeleteButton commentId={comment.id} />
           </div>
         );
