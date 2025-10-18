@@ -18,6 +18,21 @@
 
 .clerkmaincontainer {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4;
+  left: 4;
+}
+
+.button {
+  min-width: fit-content;
+  background-color: darkorange;
+  padding: 0 4px 0 4px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  cursor: pointer;
+  color: blue;
+  box-shadow: -1px 2px 3px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
 }
