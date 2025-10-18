@@ -9,16 +9,16 @@ export default function HomePage() {
       <p>
         Please
         <SignedOut>
-          <Link href="/sign-in" className={hompageContainer.link}>
+          <Link href="/sign-in" className={hompageContainer.links}>
             Sign in
           </Link>
         </SignedOut>
         <SignedIn>
-          <Link href="/create-post" className={hompageContainer.link}>
-            create a post
+          <Link href="/posts/addmusic" className={hompageContainer.links}>
+            add music
           </Link>
         </SignedIn>
-        to create a post
+        to leave a post
       </p>
     </div>
   );

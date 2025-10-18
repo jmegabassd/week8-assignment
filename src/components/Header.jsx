@@ -25,7 +25,9 @@ export default function Header() {
             <Links href="/">Home</Links>
             <Links href="/about">About</Links>
             <Links href="/posts">Posts</Links>
-            <Links href="/posts/addmusic">Add music</Links>
+            <SignedIn>
+              <Links href="/posts/addmusic">Add music</Links>
+            </SignedIn>
           </div>
         </div>
       </header>

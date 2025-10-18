@@ -4,4 +4,14 @@
   grid-row-start: 2;
   grid-row-end: 3;
   margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links {
+  color: blue;
+  padding-left: 4px;
+  padding-right: 4px;
 }
