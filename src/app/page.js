@@ -9,12 +9,12 @@ export default function HomePage() {
       <p>
         Please
         <SignedOut>
-          <Link href="/sign-in" className={headerStyles.link}>
+          <Link href="/sign-in" className={hompageContainer.link}>
             Sign in
           </Link>
         </SignedOut>
         <SignedIn>
-          <Link href="/create-post" className={headerStyles.link}>
+          <Link href="/create-post" className={hompageContainer.link}>
             create a post
           </Link>
         </SignedIn>
