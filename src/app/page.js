@@ -1,12 +1,24 @@
 import hompageContainer from "./homepage.module.css";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
     <div className={hompageContainer.hompagecontainer}>
-      <h1>My Homepage</h1>
+      <h1>HomePage</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-        odio. Praesent libero. Sed cursus ante dapibus diam.
+        Please
+        <SignedOut>
+          <Link href="/sign-in" className={headerStyles.link}>
+            Sign in
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <Link href="/create-post" className={headerStyles.link}>
+            create a post
+          </Link>
+        </SignedIn>
+        to create a post
       </p>
     </div>
   );
