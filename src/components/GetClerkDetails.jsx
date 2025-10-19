@@ -12,11 +12,9 @@ export default async function () {
 
   return (
     <div className={mainHeader.clerkdetails}>
-      <p className="font-semibold">
-        Welcome {user.firstName} {user.lastName}
-      </p>
+      <p className="font-semibold">Welcome {user.firstName}</p>
       <Link className={classLinks.link} href={`/user/${user.username}`}>
-        go to {user.username}'s page
+        User Details
       </Link>
     </div>
   );

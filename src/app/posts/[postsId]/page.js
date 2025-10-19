@@ -6,7 +6,8 @@ import CommentsForm from "@/components/CommentsForm";
 export default async function PostsIdPage({ params }) {
   const postsId = (await params).postsId;
   const query = await db.query(
-    `SELECT id, time, username, artist, album, track_name, genre, video_id From posts WHERE id = ${postsId}`
+    `SELECT id, time, username, artist, album, track_name, genre, video_id From posts WHERE id = $1`,
+    [postsId]
   );
 
   const posts = query.rows[0];

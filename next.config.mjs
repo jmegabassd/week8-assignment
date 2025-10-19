@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "img.youtube.com",
       },
+      {
+        protocol: "https",
+        hostname: "img.clerk.com",
+      },
     ],
     qualities: [85],
   },

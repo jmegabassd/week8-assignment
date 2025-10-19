@@ -1,0 +1,11 @@
+.imagecontainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.image {
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+}

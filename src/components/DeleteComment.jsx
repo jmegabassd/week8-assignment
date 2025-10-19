@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 export async function deleteComment(commentId) {
   try {
-    await db.query(`DELETE FROM comments WHERE id = ${commentId}`);
+    await db.query(`DELETE FROM comments WHERE id = $1`, [commentId]);
     revalidatePath(`/posts`);
     redirect(`/posts`);
   } catch (error) {

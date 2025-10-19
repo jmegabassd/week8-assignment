@@ -5,7 +5,8 @@ import DeleteButton from "./DeleteButton";
 
 export default async function Comments({ postsId }) {
   const query = await db.query(
-    `SELECT id, name, time, comments, post_id From comments WHERE post_id = ${postsId}`
+    `SELECT id, name, time, comments, post_id From comments WHERE post_id = $1`,
+    [postsId]
   );
 
   const comments = query.rows;

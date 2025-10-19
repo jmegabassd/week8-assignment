@@ -3,15 +3,19 @@ import pg from "pg";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import addPost from "./addpost.module.css";
+import { currentUser } from "@clerk/nextjs/server";
 
 export default async function AddPost() {
+  const user = await currentUser();
+  const clerkUserId = user.id;
+  const clerkUserName = user.username;
   async function handleSavePost(formData) {
     "use server";
     console.log("Saving post to the database...");
 
     const db = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 
-    const { username, artist, album, track_name, genre, video_id } =
+    const { artist, album, track_name, genre, video_id } =
       Object.fromEntries(formData);
 
     const currentTime = new Date().toISOString();
@@ -27,8 +31,17 @@ export default async function AddPost() {
     const videoid = getYouTubeId(videoUrl);
 
     await db.query(
-      `INSERT INTO posts (time, username, artist, album, track_name, genre, video_id ) VALUES ($1, $2, $3, $4, $5, $6, $7)`,
-      [currentTime, username, artist, album, track_name, genre, videoid]
+      `INSERT INTO posts (time, username, artist, album, track_name, genre, video_id, user_id ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+      [
+        currentTime,
+        clerkUserName,
+        artist,
+        album,
+        track_name,
+        genre,
+        videoid,
+        clerkUserId,
+      ]
     );
 
     revalidatePath("/posts");
@@ -49,8 +62,8 @@ export default async function AddPost() {
             name="username"
             type="text"
             required
-            placeholder="Your name."
-            maxLength={40}
+            defaultValue={clerkUserName}
+            readOnly
           />
 
           <label className={addPost.label} htmlFor="artist">

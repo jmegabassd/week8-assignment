@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <header className={mainHeader.mainheader}>
         <h1 className="!text-3xl flex h-full justify-center items-end">
-          Music Blog
+          Megabass Music
         </h1>
         <div className={mainHeader.links}>
           <div className={mainHeader.clerkmaincontainer}>
